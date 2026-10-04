@@ -4,9 +4,9 @@
 
 ## 整机与实机视频
 
-[![小车整机：点击查看实机视频](docs/images/vehicle_prototype.png)](docs/media/tennis_ball_pickup_demo.mp4)
+[![小车整机：点击查看实机视频](docs/images/vehicle_prototype.png)](docs/media/tennis_ball_pickup_demo.mp4?raw=true)
 
-**[▶ 点击查看实机视频：小车接近、网球夹取与收集](docs/media/tennis_ball_pickup_demo.mp4)**
+[▶ 点击查看实机视频：小车接近、网球夹取与收集](docs/media/tennis_ball_pickup_demo.mp4?raw=true)
 
 整机采用四轮麦克纳姆轮底盘，安装机械臂、夹爪与收集盒。视频展示小车运动、夹起网球并放入收集盒的过程，测试中有人手调整球的位置。机械臂控制程序未包含在本仓库中。
 
@@ -14,7 +14,7 @@
 
 树莓派通过摄像头采集图像，使用 OpenCV 提取网球位置与像素半径，并通过 UART 输出视觉数据。STM32H743 负责底盘控制，通过四路编码器反馈和独立 PI 控制器调节各轮 PWM，使用 GPIO 控制电机方向。
 
-仓库按两个开发阶段组织：**当前开发基线**包含二进制视觉发送程序和四轮 PI 速度测试程序；**历史实验**保留 ASCII 通信、自动寻球状态机和 VL53L1X 辅助接近逻辑。
+仓库按两个开发阶段组织：当前开发基线包含二进制视觉发送程序和四轮 PI 速度测试程序；历史实验保留 ASCII 通信、自动寻球状态机和 VL53L1X 辅助接近逻辑。
 
 ## 硬件平台
 
@@ -109,7 +109,7 @@ flowchart LR
 
 ## UART 通信
 
-当前树莓派视觉发送程序使用 `/dev/serial0`，通信配置为 **115200 波特率、8 数据位、无校验、1 停止位（8N1）**。
+当前树莓派视觉发送程序使用 `/dev/serial0`，通信配置为 115200 波特率、8 数据位、无校验、1 停止位（8N1）。
 
 视觉数据采用 10 字节定长二进制帧：
 
@@ -158,8 +158,8 @@ flowchart LR
 
 ## 开发环境
 
-- **STM32 开发：**STM32CubeMX、Keil MDK。
-- **树莓派视觉：**Python、Picamera2、OpenCV、NumPy、imutils、pyserial。
-- **外部 SDK：**STM32CubeH7 HAL/CMSIS 与适用的 Keil 器件包。工程保留原 `Drivers/` 引用，仓库未附带整套 SDK。
+- STM32 开发：STM32CubeMX、Keil MDK。
+- 树莓派视觉：Python、Picamera2、OpenCV、NumPy、imutils、pyserial。
+- 外部 SDK：STM32CubeH7 HAL/CMSIS 与适用的 Keil 器件包。工程保留原 `Drivers/` 引用，仓库未附带整套 SDK。
 
 仓库保留 VL53L1X 平台适配代码、ST 传感器 API 与 STM32 自动生成的支持代码，并保留第三方原始版权声明。
