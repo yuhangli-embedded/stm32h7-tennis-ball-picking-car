@@ -4,9 +4,11 @@
 
 ## 整机与实机视频
 
-[![小车整机：点击查看实机视频](docs/images/vehicle_prototype.png)](docs/media/tennis_ball_pickup_demo.mp4?raw=true)
+![小车整机](docs/images/vehicle_prototype.png)
 
-[▶ 点击查看实机视频：小车接近、网球夹取与收集](docs/media/tennis_ball_pickup_demo.mp4?raw=true)
+小车接近、网球夹取与收集实机演示：
+
+https://github.com/user-attachments/assets/2648f8f7-1c16-46f0-8ae8-6acfed89a4ca
 
 整机采用四轮麦克纳姆轮底盘，安装机械臂、夹爪与收集盒。视频展示小车运动、夹起网球并放入收集盒的过程，测试中有人手调整球的位置。机械臂控制程序未包含在本仓库中。
 
